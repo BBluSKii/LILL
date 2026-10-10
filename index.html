@@ -11,19 +11,61 @@
         .level-card { border: 1px solid #333; padding: 15px; margin: 15px 0; border-radius: 6px; background: #252525; text-align: left; }
         .level-title { font-size: 20px; font-weight: bold; color: #ffcc00; }
         .rank { font-size: 24px; font-weight: bold; color: #ff3333; float: right; }
+        
+        /* Box and button styles for your submission section */
+        .box-container { max-width: 800px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5); margin-bottom: 20px; }
+        h2 { color: #ff3333; text-align: left; margin-top: 0; }
+        form { text-align: left; display: flex; flex-direction: column; gap: 10px; }
+        label { font-weight: bold; color: #ffcc00; }
+        input, textarea { background-color: #252525; color: white; border: 1px solid #333; padding: 8px; border-radius: 4px; font-family: Arial, sans-serif; }
+        .submit-btn { background-color: #ff3333; color: white; border: none; padding: 10px; font-weight: bold; border-radius: 5px; cursor: pointer; margin-top: 5px; width: fit-content; }
+        .submit-btn:hover { background-color: #cc0000; }
+        .forms-link-style { color: #ff3333; text-decoration: underline; font-weight: bold; }
     </style>
 </head>
 <body>
     <h1>LILL: Literally Impossible Levels List</h1>
-    <p>This list includes levels that are "LITERALLY" impossible, I mean you can tell by the name of this list. And these levels need to be something, not just a wall you cant pass, it needs to be a full level, yes it can be a layout but it needs to be an actual level.</p>
-    <div class="list-container">
-        <!-- RANK #1 -->
-        <div class="level-card">
-            <span class="rank">#1</span>
-            <div class="level-title">Impossible Grief fir</div>
-            <p><strong>ID:</strong> 150226767</p>
-            <p><strong>Creator:</strong> onisu2988</p>
-            <p><strong>Technical Requirement:</strong> Physically possible with infinite frames and impossible without noclip</p>
+    <p>This list includes levels that are "LITERALLY" impossible, I mean you can tell by the name of this list.
+        And these levels need to be something, not just a wall you cant pass, it needs to be a full level, yes it can be a layout but it needs to be an actual level.
+    level submission on this Google Forms link <a href="https://forms.gle/M1nAnVJLg4cccaoA8" target="_blank" class="forms-link-style">Google Forms link</a></p>
+
+    <!-- SUBMISSION FORM -->
+    <div class="box-container">
+        <h2>📩 Submit a Level to the LILL</h2>
+        <!-- Form action changed to point directly to your Google Form backend submit endpoint -->
+        <form action="YOUR_GOOGLE_FORM_SUBMIT_URL" method="POST">
+            <label for="creator">Your GD Name / Creator:</label>
+            <!-- Note: the 'name' attributes must be changed later to match your Google Form entry IDs -->
+            <input type="text" id="creator" name="entry.111111111" placeholder="Your GD username" required>
+            
+            <label for="levelName">Level Name:</label>
+            <input type="text" id="levelName" name="entry.222222222" placeholder="Level name" required>
+            
+            <label key="levelId">Level ID:</label>
+            <input type="text" id="levelId" name="entry.333333333" placeholder="Level ID" required>
+            
+            <label for="videoLink">Showcase or Video Link (YouTube):</label>
+            <input type="url" id="videoLink" name="entry.444444444" placeholder="https://youtube.com..." optional>
+            
+            <label for="details">Why is it literally impossible?:</label>
+            <textarea id="details" name="entry.555555555" rows="3" placeholder="Describe the impossible obstacles..." required></textarea>
+            
+            <button type="submit" class="submit-btn">Send Level Entry</button>
+        </form>
+    </div>
+    
+    <!-- THE LILL LEADERBOARD -->
+    <div class="box-container">
+        <h2>🏆 Top Impossibility Standings</h2>
+        <div class="list-container">
+            <!-- RANK #1 -->
+            <div class="level-card">
+                <span class="rank">#1</span>
+                <div class="level-title">Impossible Grief fir</div>
+                <p><strong>ID:</strong> 150226767</p>
+                <p><strong>Creator:</strong> onisu2988</p>
+                <p><strong>Technical Requirement:</strong> Physically possible with infinite frames and impossible without noclip</p>
+            </div>
         </div>
     </div>
 </body>
